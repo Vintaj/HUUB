@@ -1,0 +1,35 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+<br> 
+	<div class="bg-dark text-white prof"  style='border: 1px solid #000; box-shadow: 0 0 0.5rem #000, 0 0 0.25rem #000;'>
+		<br>
+			<div class="profile">
+				<div class="profile_name">
+					<div class="profile_decor_name">
+						{% if profile.avatar %}<div class='page_avatar'><a href="#"><img src="{{ profile.avatar.url }}" alt="avatar"></a></div>
+						{% else %}<div class='page_avatar'><a href="#"><img src="{% static 'no_image/no_image.png' %}" alt="avatar"></a></div>
+						{% endif %}
+				 <div class="but_profile_name">
+						 	<form action='/' method="POST">
+						 			{% csrf_token %}
+									<a class='btn btn-light profile_decor_name_but' href="{% url 'shop:slogout' %}">Logout</a>
+									<a class='btn btn-light profile_decor_name_but' href="{% url 'shop:profile_update' %}">Редактировать</a>
+							</form>
+					</div>
+				</div>
+					<div class="page_name_info">
+						<p class="profile_username">{{ profile.username }} {{ profile.last_name }}</p>
+						<p class='profile_email'>{{ user.email }}</p>
+						<p class='profile_phone'>{{ profile.phone }}</p>
+
+					</div>
+				
+				
+			</div>
+				<hr style='background: #fff;'>
+
+			</div>
+	</div>
+{% endblock %}

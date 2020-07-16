@@ -1,0 +1,24 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Каталог{% endif %}
+{% endblock %}
+{% block content %}
+    <br>
+    <div class="col-md-7 card" style='padding: 15px; margin-right: auto; margin-left: auto; box-shadow: 0 0 0.5rem #000, 0 0 0.25rem #000;'>
+    <div class="product-detail">
+        <img src="{% if product.image %}{{ product.image.url }}{% else %}{% static 'img/no_image.png' %}{% endif %}">
+        <h2>{{ product.name }}</h2>
+        <h4><a href="{{ product.category.get_absolute_url }}">{{ product.category }}</a></h4>
+        <p class="price">${{ product.price }}</p>
+        {{ product.description|linebreaks }}
+    </div>
+			<form action="{% url 'cart:cart_add' product.id %}" method="post">
+			    {{ cart_product_form }}
+			    {% csrf_token %}
+                <br>
+                <p class="price">${{ product.price }}</p>
+			    <input class="btn btn-dark addToCart" style="padding: 5px;" type="submit" value="Добавить в корзину">
+			</form>
+     </div>           
+{% endblock %}

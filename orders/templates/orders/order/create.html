@@ -1,0 +1,35 @@
+{% extends "shop/base.html" %}
+
+{% block title %}Checkout{% endblock %}
+
+{% block content %}
+    <br>
+    <div class="container card" style=' box-shadow: 0 0 0.5rem #000, 0 0 0.25rem #000;'>
+    <h2>Checkout</h2>
+    <div class="order-info">
+        <h3>Your order</h3>
+    <ul>
+       {% for item in cart %}
+
+            <li>
+               {{ item.quantity }}x {{ item.product.name }}
+               <span>${{ item.total_price }}</span>
+            </li>
+
+       {% endfor %}
+       {% if cart.coupon %}
+            <li>
+                {{ cart.coupon.code }}" ({{ cart.coupon.discount }}% off)
+                <span >- ${{ cart.get_discount|floatformat:"2" }}</span>
+             </li>
+       {% endif %}
+    </ul>
+        <p>Total: ${{ cart.get_total_price_after_discount|floatformat:"2" }}</p>
+    </div>
+    <form action="." method="post" class="order-form">
+        {{ form.as_p }}
+        <input type="submit" class="btn btn-dark" value="Place order"></p>
+        {% csrf_token %}
+    </form>
+    </div>
+{% endblock %}

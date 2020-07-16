@@ -1,0 +1,15 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block content %}
+<br> 
+	<div class="bg-dark text-white prof"  style='border: 1px solid #000; box-shadow: 0 0 0.5rem #000, 0 0 0.25rem #000; width: 50%; auto; padding: 15px;'>
+		<br>
+		<form method='POST' class='form_registr text-left' enctype='multipart/form-data'>
+					{% csrf_token %}
+					<anything_else>
+					{{ profile_form }}
+					<input class='btn btn-dark' type="submit" value='Сохранить изменения'>
+				</form>
+	</div>
+{% endblock %}

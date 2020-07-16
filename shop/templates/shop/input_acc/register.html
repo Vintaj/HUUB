@@ -1,0 +1,27 @@
+{% extends "shop/base.html" %}
+{% load static %}
+
+{% block title %}
+    {% if category %}{{ category.title }}{% else %}Products{% endif %}
+{% endblock %}
+
+{% block content %}
+	 <br>
+	 <div class="container">
+	 		
+			<div class="text-center" style='border: 1px solid #000; box-shadow: 0 0 0.5rem #000, 0 0 0.25rem #000; width: 60%;margin-left: auto; margin-right: auto; padding: 15px;'>
+				
+				<h3> Войти </h3>
+				
+				<form method='POST' class='form_registr text-left'>
+					{% csrf_token %}
+					<anything_else>
+					{{ form }}
+					<input class='btn btn-dark' type="submit" value='Войти'>
+				</form>
+
+			</div>
+
+	 </div>
+
+{% endblock %}
