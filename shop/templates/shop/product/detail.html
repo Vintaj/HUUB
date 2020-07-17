@@ -19,7 +19,7 @@
 			    {{ cart_product_form }}
 			    {% csrf_token %}
                 <br>
-                <p class="price">${{ product.price }}</p>
+                <p id='cart_price'>${{ product.price }}</p>
 			    <input class="btn btn-dark addToCart" style="padding: 5px;" type="submit" value="Добавить в корзину">
 			</form>
      </div>           

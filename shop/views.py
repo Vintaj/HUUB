@@ -29,6 +29,7 @@ import json
 from django.core import serializers
 
 def product_list(request, category_slug=None):
+    # Список наших продуктов
     category = None
     categories = Category.objects.all()
     products = Product.objects.filter(available=True)
@@ -48,7 +49,7 @@ def product_list(request, category_slug=None):
 
 
 def product_detail(request, id, slug):
-
+    # детальных просмотр продукта
     product = get_object_or_404(Product,
                                 id=id,
                                 slug=slug,
@@ -58,6 +59,7 @@ def product_detail(request, id, slug):
                                                         'cart_product_form': cart_product_form})
 
 class UserRegister(CreateView):
+    # регистрация пользователя
     template_name = 'shop/input_acc/register.html'
     form_class = RegisterUserForm
 
@@ -71,6 +73,7 @@ class UserRegister(CreateView):
 
 
 class UserLogin(LoginView):
+    # Вход пользователя
     template_name = 'shop/input_acc/login.html'
     success_url = '/'
 
@@ -79,6 +82,7 @@ class UserLogin(LoginView):
 
 
 class ProfileDetail(DetailView):
+    # Профиль пользователя
     model = Profile
     context_object_name = "profile"
     template_name = 'shop/account/account.html'    
@@ -87,10 +91,12 @@ class ProfileDetail(DetailView):
         return Profile.objects.get(user__username=self.kwargs.get('slug'))
 
 def slogout(request):
+    # Вход пользователя если есть и возвращение на главную при входе
     logout(request)
     return HttpResponseRedirect('/')
 
 def profile_update(request):
+    # редактирование профиля.
     if request.method == 'POST':
         profile_form = ProfileUpdateForm(request.POST, request.FILES, instance=request.user.profile)
         if profile_form.is_valid():

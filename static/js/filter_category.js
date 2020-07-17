@@ -65,18 +65,21 @@ $(".filter_link").on("click", async function (event) {
 $(".addToCart").on("click", function (event) {
   let url = "http://127.0.0.1:8000/cart/add/6/";
   let csrfToken = getCookie("csrftoken");
-  // let cart_id_href = window.location.href;
-  // let cart_id = cart_id_href["22"];
+  let cart_id_href = window.location.href;
+  let cart_id = cart_id_href["22"];
   let e = document.getElementById("id_quantity");
+  let cart_price = document.getElementById("cart_price").innerText;
+  cart_price = cart_price.replace("$", "");
+  console.log(cart_price);
   let quantity = e.value;
-  if ($(".shoping-cart_info").length > 0) {
-    $(".shoping-cart_info").empty();
-  }
+  $(".shoping-cart_info").empty();
   // let addToCartData = ('6');
   // Данные которые мы передаем и наша форма хочет получить
   event.preventDefault();
   let data = {
+    cart_id: cart_id,
     quantity: quantity,
+    cart_price: cart_price,
     csrfmiddlewaretoken: csrfToken,
   };
   $.ajax({

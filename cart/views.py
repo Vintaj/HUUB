@@ -19,7 +19,7 @@ def cart_add(request, product_id):
     # принемает лиш айди
 
     #  form = {'quantity': 1, 'update': True} - то как должна выгл данные для валидности формы
-    form = CartAddProductForm({"quantity": 1})
+    form = CartAddProductForm(request.POST)
     print(request.POST)
     print(request.POST.get("addToCartData"))
     # Отправка идет в форму(данные отправки), и форма принимая их выдает значение
