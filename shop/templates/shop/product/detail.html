@@ -1,7 +1,9 @@
 {% extends "shop/base.html" %}
 {% load static %}
 {% block title %}
-    {% if category %}{{ category.title }}{% else %}Каталог{% endif %}
+    {% if category %}{{ category.title }}{% else %}Товар{% endif %}
+{% endblock %}
+{% block style_css %}
 {% endblock %}
 {% block content %}
     <br>

@@ -23,17 +23,17 @@ $(".filter_link").on("click", async function (event) {
       for (let i = 0; i < getData.length; i++) {
         $(".product-list_item").append(
           $(
-            `<div class='item card col-md-3' style="margin: 10px; padding: 15px;" >` +
+            `<div class='item card product_list-item_item' style="width: 100%; margin: 10px; padding: 15px;" >` +
               '<a class="product_item_slug" href="' +
               "/" +
               getData[String(i)].pk +
               "/" +
               getData[String(i)].fields.slug +
               '">' +
-              '<img class="product_item_image" src="' +
+              "<img height='80px' class='product_item_image' src='" +
               "/media/" +
               getData[String(i)].fields.image +
-              '" href=""' +
+              "' href=''" +
               "</a>" +
               '<a class="product_item_name" href="' +
               "/" +
@@ -46,6 +46,9 @@ $(".filter_link").on("click", async function (event) {
               "<p>" +
               getData[String(i)].fields.price +
               "</p>" +
+              "<a class='btn btn-info goOverInfoProduct' style='width: 60%;' href='{{ product.get_absolute_url }}'>'" +
+              "Подробнее" +
+              "</a>" +
               "</div>"
           )
         );
@@ -66,8 +69,8 @@ $(".addToCart").on("click", function (event) {
   // let cart_id = cart_id_href["22"];
   let e = document.getElementById("id_quantity");
   let quantity = e.value;
-  if ($(".cart_info").length > 0) {
-    $(".cart_info").empty();
+  if ($(".shoping-cart_info").length > 0) {
+    $(".shoping-cart_info").empty();
   }
   // let addToCartData = ('6');
   // Данные которые мы передаем и наша форма хочет получить
@@ -82,7 +85,7 @@ $(".addToCart").on("click", function (event) {
     url: url,
     success: function (response) {
       let getData = JSON.parse(response);
-      $(".cart_info").append(
+      $(".shoping-cart_info").append(
         "<p>" + getData.quantity + "</p>" + "<p>" + "$" + getData.price + "</p>"
       );
       //JSON.parse ожидает строку в параметре. Чтобы решить эту проблему, вам нужно привести в порядок свой JSON-объект.

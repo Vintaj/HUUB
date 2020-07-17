@@ -1,0 +1,31 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+#subheader {
+  color: white;
+  margin-right: 10px;
+}
+
+.shoping-cart {
+  display: flex;
+  position: relative;
+  top: 8px;
+}
+
+.shoping-cart .shoping-cart_info {
+  display: flex;
+}
+
+.shoping-cart_info p {
+  margin-left: 20px;
+}
