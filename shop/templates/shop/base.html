@@ -1,70 +1,126 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
-<head>
-    <meta charset="utf-8"/>
+  <head>
+    <meta charset="utf-8" />
     <title>{% block title %}sybroshop{% endblock %}</title>
-    <link rel="shortcut icon" href="{% static 'index/sybroshop.png' %}" type="image/x-icon">
-    <meta name="viewport" content="width=device-width, height=device-height">
-     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+    <link
+      rel="shortcut icon"
+      href="{% static 'index/sybroshop.png' %}"
+      type="image/x-icon"
+    />
+    <meta name="viewport" content="width=device-width, height=device-height" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+      integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
+    />
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+      integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
+      integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
+      crossorigin="anonymous"
+    ></script>
+    <!-- иконки -->
+   <script src = " https://use.fontawesome.com/1d28aa9c1a.js " > </script>
     <!-- Держать эту ссылку здесь чтобы она перекрывала будстрап -->
-    <link href="{% static 'css/index.css' %}" rel="stylesheet">
-    {% block style_css %}
-    
-    {% endblock %}
-</head>
+    <link href="{% static 'css/index.css' %}" rel="stylesheet" />
+    {% block style_css %} {% endblock %}
+  </head>
 
-<header>
-
-  <nav class="navbar navbar-expand-lg" style='background:#57c49c; height: 55px;'>
-
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
-
-  <div class="collapse navbar-collapse" id="navbarText">
-
-    <ul class="navbar-nav mr-auto ">
-      {% block header %}
-      <li class="nav-item active ">
-        <a class="nav-link text-white" href="/"> SybroShop <span class="sr-only">(current)</span></a>
-      </li>
-
-    {% endblock %}
-
-  </div>
-  
-   <li class="nav-item">
-       
-    <div id="subheader">
-        <div class="shoping-cart text-white">
-          {% with total_items=cart|length %}
-               Your cart:
-               <a class='shoping-cart_info text-white' href="{% url 'cart:cart_detail' %}">
-                 <p> {{ total_items }} </p>
-                 <p>  ${{ cart.get_total_price }}</p>
-               </a>
-        {% endwith %}
-        </div>
-
-    </div>
-
-   </li>
-
-   <li class="nav-item"> 
-       {% if user.is_authenticated %} 
-       
-          <a class="nav-link text-white" href="{% url 'shop:account' slug=user.username %}">{{request.user.username}} <span class="sr-only">(current)</span></a>
-
-       {% else %}
-          <a type="button" style='cursor: pointer; color: white' data-toggle="modal" data-target="#exampleModal1">
-            Вход
+  <header>
+    <div class="container">
+      <div class="header">
+        <h1 class="logo">
+          <a href="/">
+            <img
+              width="100px"
+              src="{% static 'header/HUUB Logo - Horizontal - 2020 - Solid Black.png' %}"
+              alt="header_logo"
+            />
           </a>
-          
-          <!-- Modal -->
+        </h1>
+
+        <nav class="nav-header">
+          <ul class="ul--inline ul--no-style">
+            <li class="li-has-sub">
+              <a href="">
+                Info
+              </a>
+            </li>
+            <li class="li-has-sub">
+              <a href="/">
+                Catalog
+              </a>
+            </li>
+            <li class="li-has-sub">
+              <a href="">
+                Services
+              </a>
+            </li>
+            <li class="li-has-sub">
+              <a href="">
+                Blog
+              </a>
+            </li>
+            <li class="li-has-sub">
+              <a href="">
+                Contact
+              </a>
+            </li>
+          </ul>
+        </nav>
+
+        <div class="header-button">
+          <div class="search-button">
+            <a href="">
+              <i class="fa fa-search"></i>
+            </a>
+            <form action="" class="form-header">
+              <input
+                type="text"
+                id="header-input"
+                class="form__input form__input--hidden"
+                placeholder="Search here..."
+              />
+            </form>
+          </div>
+
+          <div class="mini-cart">
+            {% with total_items=cart|length %}
+            <a href="{% url 'cart:cart_detail' %}">
+              <i class="fa fa-shopping-bag"></i>
+              <span class="mini-cart-counter">{{ total_items }}</span>
+            </a>
+            {% endwith %}
+          </div>
+
+          <div class="canvas-menu-button">
+              {% if user.is_authenticated %}
+                <a class="if_authenticated" href="{% url 'shop:account' slug=user.username %}">
+                  <i class="fa fa-user-circle"></i>
+                </a>
+              {% else %}
+              
+                <a type='button' data-toggle="modal" data-target="#exampleModal1">
+                  <i class="fa fa-power-off"></i>
+                </a>
+                
+                 <!-- Modal -->
           <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog" role="document">
               <div class="modal-content">
@@ -86,24 +142,22 @@
               </div>
             </div>
           </div>
-       {% endif %}
-   </li>
-   
-</nav>
 
-</header>
+              {% endif %}
 
-<body>
-<div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
 
-  <div id="content">
-      {% block content %}
-
-      {% endblock %}
-  </div>
-
-</div>
-<!-- Загружаем js файлы отдельно -->
-<script src="{% static 'js/filter_category.js' %}"></script>
-</body>
+  <body>
+    <div>
+      <div id="content">
+        {% block content %} {% endblock %}
+      </div>
+    </div>
+    <!-- Загружаем js файлы отдельно -->
+    <script src="{% static 'js/filter_category.js' %}"></script>
+  </body>
 </html>

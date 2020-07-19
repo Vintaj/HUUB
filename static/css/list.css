@@ -23,7 +23,7 @@ a {
 }
 
 .ul_category {
-  height: 400px;
+  height: 200px;
   margin-top: 15px;
   text-decoration: none;
 }
@@ -31,15 +31,16 @@ a {
 .ul_category a {
   height: 50px;
   margin-top: 15px;
+  text-decoration: none;
 }
 
 .filter_all div {
   text-align: center;
   color: white;
   height: 25px;
-  width: 60%;
+  width: 100px;
   border-radius: 5px;
-  background-color: #17a2b8;
+  background-color: #57c49c;
   margin-top: 5px;
 }
 
@@ -49,14 +50,13 @@ a {
 }
 
 .filter_link div {
-  width: 60%;
-
+  width: 100px;
+  height: 25px;
   text-align: center;
   margin-top: 10px;
-  height: 70px;
   color: white;
   border-radius: 5px;
-  background-color: #17a2b8;
+  background-color: #57c49c;
 }
 
 .filter_link div:hover {
@@ -64,9 +64,9 @@ a {
   transition: color 0.15s ease-in-out, background-color 0.15s ease-in-out;
 }
 
-.filter_link div p {
+.filter_link p {
   position: relative;
-  top: 20px;
+  top: 0px;
 }
 
 .productCategoryH1 {
@@ -84,9 +84,22 @@ a {
   -webkit-text-fill-color: transparent;
   text-align: center;
 }
-
 .frstItem_productListName {
-  text-align: center;
+  width: 40%;
+}
+
+.frstItem_productListName a {
+  text-align: left;
+  color: #57c49c;
+  text-decoration: none;
+  font-family: calibri;
+  font-weight: bold;
+}
+
+.frstItem_productListName p {
+  text-align: left;
+  text-decoration: none;
+  font-size: 13.5px;
 }
 
 .secondItem_productListName {
@@ -94,20 +107,42 @@ a {
 }
 
 .goOverInfoProduct {
-  width: 150px;
-  height: 40px;
-  margin-right: auto;
-  margin-left: auto;
+  border: 1px solid #495057;
+  padding: 10px;
+  position: relative;
+  top: 10px;
+  border-radius: 5px;
+}
+
+.goOverInfoProduct:hover {
+  border: 1px solid #57c49c;
+  background-color: #57c49c;
+  transition: 0.4s ease;
+}
+
+.product_item_list .goOverInfoProduct {
+  text-decoration: none;
+  color: #495057;
+}
+
+.product_item_list .goOverInfoProduct:hover {
+  color: #fff;
+  transition: 0.4s ease;
 }
 
 .product_list-item_item {
   width: 100%;
-  margin: 10px;
-  padding: 15px;
-  display: grid;
-  grid-template-columns: 20% 45% 15% 20%;
+  margin-top: 25px;
+  height: 150px;
+  display: flex;
+  justify-content: space-between;
+  border: 1px solid #b9b9b948;
+  background-color: hsla(0, 3%, 92%, 0.459);
+  border-radius: 10px;
+  padding: 10px;
 }
 
+/* форма регистрации и профиль */
 .form_registr input {
   display: block;
   width: 100%;
