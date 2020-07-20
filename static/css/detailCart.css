@@ -1,0 +1,115 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* Title cart */
+.title-cart {
+  margin-top: 50px;
+  padding-bottom: 20px;
+  width: 300px;
+  text-align: center;
+  margin-right: auto;
+  margin-left: auto;
+}
+.title-cart span {
+  color: #57c49c;
+}
+.title-cart p {
+  font-size: 14.5px;
+  margin-right: 5px;
+  margin-left: 5px;
+  color: #7f7f7f;
+}
+
+/* form */
+
+.formContainerItem {
+  display: flex;
+  background-color: hsla(0, 3%, 92%, 0.459);
+  border-radius: 10px;
+  padding: 15px;
+  margin-top: 25px;
+}
+
+.formContainerSecond {
+  width: 70%;
+  padding: 10px;
+}
+
+.formContainerItemFirst {
+  width: 20%;
+}
+
+.formContainerItemFirst img {
+  width: 78%;
+  margin-top: 15px;
+  margin-left: 15px;
+}
+
+.formContainerSecond h5 {
+  text-align: left;
+  color: #57c49c;
+  text-decoration: none;
+  font-family: calibri;
+  font-weight: bold;
+}
+
+.formContainerSecond b {
+  color: #000;
+  font-size: 17px;
+}
+
+.formContainerSecond p {
+  font-size: 14px;
+  width: 75%;
+}
+
+.formContainerFree {
+  margin-top: 10px;
+}
+
+.formContainerFree a{
+  border: 1px solid #495057;
+  color: #495057;
+  height: 35px;
+  width: 35px;
+  text-align: center;
+  float: right;
+  border-radius: 50%;
+}
+
+.formContainerFree i {
+  font-size: 24px;
+  margin-top: 4px;
+}
+
+.formContainerFree a:hover {
+  color: white;
+  background-color: #57c49c;
+  border: 1px solid #57c49c;
+  transition: 0.4s ease;
+}
+
+.formContainerFreeDiv:hover{
+  border: 1px solid #57c49c;
+  background-color: #57c49c;
+  color: white;
+  transition: 0.4s ease;
+}
+/* Total price */
+
+.totalPrice {
+  width: 300px;
+  margin-top: 25px;
+  float: right;
+  text-align: right;
+}

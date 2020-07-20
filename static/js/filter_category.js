@@ -23,7 +23,8 @@ $(".filter_link").on("click", async function (event) {
       for (let i = 0; i < getData.length; i++) {
         $(".product-list_item").append(
           $(
-            `<div class='item card product_list-item_item' style="width: 100%; margin: 10px; padding: 15px;" >` +
+            `<div class='item product_list-item_item'>` +
+              '<div class="product_item_list">' +
               '<a class="product_item_slug" href="' +
               "/" +
               getData[String(i)].pk +
@@ -35,6 +36,9 @@ $(".filter_link").on("click", async function (event) {
               getData[String(i)].fields.image +
               "' href=''" +
               "</a>" +
+              "</div>" +
+              // ------
+              "<div class='frstItem_productListName product_item_list'>" +
               '<a class="product_item_name" href="' +
               "/" +
               getData[String(i)].pk +
@@ -44,11 +48,19 @@ $(".filter_link").on("click", async function (event) {
               getData[String(i)].fields.name +
               "</a>" +
               "<p>" +
+              getData[String(i)].fields.description +
+              "</p>" +
+              "</div>" +
+              "<div class='secondItem_productListName product_item_list'>" +
+              "<p style='height: 25px;''>" + "$" +
               getData[String(i)].fields.price +
               "</p>" +
-              "<a class='btn btn-info goOverInfoProduct' style='width: 60%;' href='{{ product.get_absolute_url }}'>'" +
+              "</div>" +
+              "<div class='product_item_list'>" +
+              "<a class='goOverInfoProduct' href='{{ product.get_absolute_url }}'>" +
               "Подробнее" +
               "</a>" +
+              "</div>" +
               "</div>"
           )
         );
