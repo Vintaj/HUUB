@@ -39,7 +39,8 @@
    <script src = " https://use.fontawesome.com/1d28aa9c1a.js " > </script>
     <!-- Держать эту ссылку здесь чтобы она перекрывала будстрап -->
     <link href="{% static 'css/index.css' %}" rel="stylesheet" />
-    {% block style_css %} {% endblock %}
+    {% block style_css %} 
+    {% endblock %}
   </head>
 
   <header>
@@ -104,7 +105,7 @@
             {% with total_items=cart|length %}
             <a href="{% url 'cart:cart_detail' %}">
               <i class="fa fa-shopping-bag"></i>
-              <span class="mini-cart-counter">{{ total_items }}</span>
+              <span class="cartShopAppend mini-cart-counter">{{ total_items }}</span>
             </a>
             {% endwith %}
           </div>
@@ -133,9 +134,9 @@
                 </div>
 
                 
-                <div class="modal-body text-left">             
-                     <a class="btn btn-info" style='width: 100%;' href="{% url 'shop:login' %}"> Войти <span class="sr-only">(current)</span></a>
-                     <a class="btn btn-info" style='width: 100%; margin-top: 10px;' href="{% url 'shop:register' %}"> Зарегистрироваться <span class="sr-only">(current)</span></a>  
+                <div class="modal-body text-left formButtonAutentificateContainer">             
+                     <a class="formButtonAutentificate" href="{% url 'shop:login' %}"> Войти <span class="sr-only">(current)</span></a>
+                     <a class="formButtonAutentificate" style='margin-top: 10px;' href="{% url 'shop:register' %}"> Зарегистрироваться <span class="sr-only">(current)</span></a>  
                   </div>                      
                 </div>
 

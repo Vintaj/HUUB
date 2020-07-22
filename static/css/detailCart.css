@@ -11,6 +11,10 @@ a {
   text-decoration: none;
 }
 
+body {
+  height: 1500px;
+}
+
 /* Title cart */
 .title-cart {
   margin-top: 50px;
@@ -77,7 +81,7 @@ a {
   margin-top: 10px;
 }
 
-.formContainerFree a{
+.formContainerFree a {
   border: 1px solid #495057;
   color: #495057;
   height: 35px;
@@ -99,17 +103,50 @@ a {
   transition: 0.4s ease;
 }
 
-.formContainerFreeDiv:hover{
+.formContainerFreeDiv:hover {
   border: 1px solid #57c49c;
   background-color: #57c49c;
   color: white;
   transition: 0.4s ease;
 }
+
+.totalCouponsInput {
+  padding: 3px;
+  border: 1px solid #7f7f7f;
+  background-color: white;
+  color: #7f7f7f;
+  border-radius: 10px;
+}
+
+.totalCouponsInput:hover {
+  border: 1px solid #57c49c;
+  background-color: #57c49c;
+  color: white;
+  transition: 0.4s ease;
+}
+
 /* Total price */
 
 .totalPrice {
-  width: 300px;
+  width: 400px;
   margin-top: 25px;
   float: right;
   text-align: right;
+}
+
+.autentificateButton {
+  position: relative;
+  top: 15px;
+  text-decoration: none;
+  padding: 10px;
+  border: 1px solid #7f7f7f;
+  color: #7f7f7f;
+  border-radius: 5px;
+}
+
+.autentificateButton:hover {
+  border: 1px solid #57c49c;
+  background-color: #57c49c;
+  color: white;
+  transition: 0.4s ease;
 }

@@ -34,7 +34,7 @@ class Cart(object):
         product_id = self.cart_id  # <-------- могло вызвать ошибку
         print(product_id, "id")
         if product_id not in self.cart:
-            self.cart[product_id] = {"quantity": 0, "price": str(product.price)}
+            self.cart[product_id] = {"quantity": 0, "price": str(self.cart_price)}
         if update_quantity:
             self.cart[product_id]["quantity"] = quantity
         else:
@@ -61,7 +61,7 @@ class Cart(object):
         Перебор элементов в корзине и получение продуктов из базы данных.
         """
         product_ids = self.cart.keys()
-        print(product_ids, "--------------------------+++++-")
+
         # получение объектов product и добавление их в корзину
         products = Product.objects.filter(id__in=product_ids)
         for product in products:

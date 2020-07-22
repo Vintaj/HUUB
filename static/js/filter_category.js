@@ -84,7 +84,7 @@ $(".addToCart").on("click", function (event) {
   cart_price = cart_price.replace("$", "");
   console.log(cart_price);
   let quantity = e.value;
-  $(".shoping-cart_info").empty();
+  $(".cartShopAppend").empty();
   // let addToCartData = ('6');
   // Данные которые мы передаем и наша форма хочет получить
   event.preventDefault();
@@ -100,8 +100,8 @@ $(".addToCart").on("click", function (event) {
     url: url,
     success: function (response) {
       let getData = JSON.parse(response);
-      $(".shoping-cart_info").append(
-        "<p>" + getData.quantity + "</p>" + "<p>" + "$" + getData.price + "</p>"
+      $(".cartShopAppend").append(
+        getData.quantity
       );
       //JSON.parse ожидает строку в параметре. Чтобы решить эту проблему, вам нужно привести в порядок свой JSON-объект.
     },

@@ -1,0 +1,53 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+li {
+  list-style-type: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* autentificateContainer */
+
+.autentificateContainer {
+  margin-top: 25px;
+  width: 500px;
+  height: 280px;
+  border: 1px solid #7f7f7f;
+}
+
+.form_login_label {
+  margin-top: 25px;
+  display: grid;
+}
+
+.autentificateButton {
+  position: relative;
+  top: 15px;
+  padding: 10px;
+  border: 1px solid #7f7f7f;
+  color: #7f7f7f;
+  border-radius: 5px;
+  width: 100%;
+}
+
+.autentificateButton:hover {
+  border: 1px solid #57c49c;
+  background-color: #57c49c;
+  color: white;
+  transition: 0.4s ease;
+}
+
+.form_registration label {
+  position: relative;
+  font-size: 17px;
+  top: 15px;
+  padding: 10px;
+  color: #7f7f7f;
+  border-radius: 5px;
+  width: 100%;
+}

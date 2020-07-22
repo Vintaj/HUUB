@@ -72,17 +72,18 @@ cart {% endblock %} {% block style_css %}
             </div>
             <form action="{% url 'coupons:apply' %}" method="post">
                 {{ coupon_apply_form }}
-                <input type="submit" value="Apply" />
+                <input class='totalCouponsInput' type="submit" value="Ввести" />
                 {% csrf_token %}
             </form>
-            <p class="text-right">
-                <a href="{% url 'shop:product_list' %}" class="btn btn-dark"
+
+            <div class="text-right totalPriceButtonContainer">
+                <a href="{% url 'shop:product_list' %}" class="totalPriceButton"
                 >Continue shopping</a
                 >
-                <a href="{% url 'orders:order_create' %}" class="btn btn-dark">
+                <a href="{% url 'orders:order_create' %}" class="totalPriceButton">
                 Checkout
                 </a>
-            </p>
+            </div>
         </div>
     </div>
 </div>

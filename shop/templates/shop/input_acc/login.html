@@ -5,30 +5,44 @@
     {% if category %}{{ category.title }}{% else %}Products{% endif %}
 {% endblock %}
 
+{% block style_css %}
+	<link href="{% static 'css/autentificate.css' %}" rel="stylesheet">
+{% endblock %}
+
 {% block content %}
-	 <br>
-	 <div class="container">
-	 		
-			<div class="text-center" style='border: 1px solid #000; box-shadow: 0 0 0.5rem #000, 0 0 0.25rem #000; width: 60%;margin-left: auto; margin-right: auto; padding: 15px;'>
-				
-				<h3> Войти </h3>
 
-				<br>
 
-				<form method='POST' class='form_registr text-left'>
-					{% csrf_token %}
-					<label for="login">
-						<span>Логин:<br>{{ form.username }}</span>
-					</label>
-					<label for="password">
-						<span>Пароль:<br>{{ form.password }}</span>
-					</label>
-					<br>
-					<input class='btn btn-dark' type="submit" value='Войти'>
-				</form>
-				
+<div class="container" style='border-bottom: 1px solid #7f7f7f;'>
+	<div class="title-catalog">
+		<h1 class="title">
+		  HUUB
+		  <span> LOGIN </span>
+		</h1>
+		<p>
+		  Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio molestias deserunt ad!
+		</p>
+	</div>
+</div>
+
+  <div class="container">		
+	<div class='autentificateContainer container'>
+
+		<form method='POST' class='form_loginn'>
+			{% csrf_token %}
+			<div class="form_login_label">
+			<label for="login">
+				<p>login</p>
+				<span>{{ form.username }}</span>
+			</label>
+			<label for="password">
+				<p>password</p>
+				<span>{{ form.password }}</span>
+			</label>
 			</div>
-
-	 </div>
+			<input class='autentificateButton' type="submit" value='Войти'>
+		</form>
+			
+	</div>
+</div>
 
 {% endblock %}
