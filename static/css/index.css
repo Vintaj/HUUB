@@ -32,9 +32,16 @@ header {
   background-repeat: no-repeat;
   text-align: center;
 }
+
 .blur_service_item {
   background: rgba(0, 0, 0, 0.5);
   height: 100%;
+}
+
+.blur_service_item:hover {
+  background-size: auto;
+  background: rgba(32, 32, 32, 0.5);
+  transition: 0.5s ease;
 }
 
 .service__item i {
@@ -42,11 +49,30 @@ header {
   color: white;
   position: relative;
   top: 110px;
+  animation: megain 2s infinite;
+  animation-timing-function: linear;
+}
+
+.form-header input {
+  width: 100%;
+  border-radius: 5px;
+  margin-left: 5px;
+  background-color: #d1d1d1;
+}
+
+.form-header input:focus {
+  border-radius: 1px;
+  background-color: white;
+  transition: 0.4s ease;
+}
+
+.search-button {
+  display: flex;
 }
 
 .service__item p {
   font-size: 14px;
-  color: hsl(0, 0%, 74%);
+  color: white;
   text-align: left;
   margin-left: 15%;
   margin-right: 15%;
@@ -54,7 +80,9 @@ header {
   top: 110px;
   margin-block-start: 1em;
   margin-block-end: 1em;
+  display: none;
 }
+
 .service__item a {
   font-size: 20px;
   color: #57c49c;
@@ -63,15 +91,14 @@ header {
   text-decoration: none;
 }
 
-.services_item_button {
-  padding: 10px;
-  font-size: 15px;
-  color: white;
-  border-radius: 15px;
-  border: 1px solid white;
-  position: relative;
-  top: 110px;
-  margin-right: 43%;
+@keyframes megain {
+  0% {
+    color: white;
+  }
+
+  100% {
+    color: #57c49c;
+  }
 }
 
 .services_item_button:hover {

@@ -16,10 +16,6 @@
       integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh"
       crossorigin="anonymous"
     />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css"
-    />
     <script
       src="https://code.jquery.com/jquery-3.4.1.min.js"
       integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
@@ -36,7 +32,7 @@
       crossorigin="anonymous"
     ></script>
     <!-- иконки -->
-   <script src = " https://use.fontawesome.com/1d28aa9c1a.js " > </script>
+    <script src="https://use.fontawesome.com/0502b5b53d.js"></script>
     <!-- Держать эту ссылку здесь чтобы она перекрывала будстрап -->
     <link href="{% static 'css/index.css' %}" rel="stylesheet" />
     {% block style_css %} 
@@ -88,10 +84,10 @@
 
         <div class="header-button">
           <div class="search-button">
-            <a href="">
+            <a href="" class='a-search-form'>
               <i class="fa fa-search"></i>
             </a>
-            <form action="" class="form-header">
+            <form class="form-header">
               <input
                 type="text"
                 id="header-input"
@@ -160,5 +156,6 @@
     </div>
     <!-- Загружаем js файлы отдельно -->
     <script src="{% static 'js/filter_category.js' %}"></script>
+    <script src="{% static 'js/catalog.js' %}"></script>
   </body>
 </html>

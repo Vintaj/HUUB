@@ -103,8 +103,6 @@ def profile_update(request):
             profile_form.save()
             messages.success(request, ('Your profile was successfully updated!'))
             return HttpResponseRedirect('/')
-        # else:
-        #     messages.error(request, ('Please correct the error below.'))
     else:
         profile_form = ProfileUpdateForm(instance=request.user.profile)
     return render(request, 'shop/account/account_update.html', {

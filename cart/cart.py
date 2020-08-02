@@ -11,14 +11,11 @@ class Cart(object):
         """
         cart_id = request.POST.get("cart_id")
         self.cart_id = cart_id
-        cart_quantity = request.POST.get("quantity")
-        self.cart_quantity = cart_quantity
         cart_price = request.POST.get("cart_price")
         self.cart_price = cart_price
 
         self.session = request.session
         cart = self.session.get(settings.CART_SESSION_ID)
-        print(cart, "------+++")
         if not cart:
             # save an empty cart in the session
             cart = self.session[settings.CART_SESSION_ID] = {}
@@ -31,8 +28,7 @@ class Cart(object):
         """
         Добавить продукт в корзину или обновить его количество.
         """
-        product_id = self.cart_id  # <-------- могло вызвать ошибку
-        print(product_id, "id")
+        product_id = self.cart_id 
         if product_id not in self.cart:
             self.cart[product_id] = {"quantity": 0, "price": str(self.cart_price)}
         if update_quantity:

@@ -11,17 +11,6 @@ a {
   text-decoration: none;
 }
 
-.catalogSearch {
-  height: 35px;
-  width: 90%;
-  border: 2px solid #17a2b8;
-  border-radius: 5px;
-}
-
-.catalogSearch:active {
-  border: 2px solid #17a2b8;
-}
-
 .ul_category {
   height: 200px;
   margin-top: 15px;
